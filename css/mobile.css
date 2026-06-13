@@ -89,9 +89,13 @@
     display: block !important;
   }
 
-  .footer-top > div:nth-child(2),
-  .footer-top > div:nth-child(3) {
+  .footer-top > div:nth-child(2) {
     display: none !important;
+  }
+
+  .footer-top > div:nth-child(3),
+  .footer-top > .ft-langs {
+    display: block !important;
   }
 
   .ft-logo {
@@ -119,9 +123,37 @@
   }
 
   .ft-company-name,
-  .ft-company-info,
-  .ft-langs {
+  .ft-company-info {
     display: none !important;
+  }
+
+  .ft-langs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 0 !important;
+    padding: 4px 0 2px !important;
+    margin-top: 2px !important;
+  }
+
+  .ft-lang {
+    font-size: 7px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+    color: rgba(244, 240, 232, 0.35) !important;
+  }
+
+  .ft-lang.active {
+    color: rgba(244, 240, 232, 0.85) !important;
+  }
+
+  .ft-lang + .ft-lang::before {
+    content: '/' !important;
+    margin: 0 5px !important;
+    color: rgba(244, 240, 232, 0.22) !important;
+    font-weight: 400 !important;
+    pointer-events: none !important;
   }
 
   .footer-bottom {
@@ -214,6 +246,77 @@
   }
 
   .cb-title {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+    color: #1F4037 !important;
+  }
+
+  /* ── qube24 / landing contact section (cs-btn) ── */
+  .contact-section-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    padding: 24px 24px 28px !important;
+    gap: 18px !important;
+    min-height: auto !important;
+  }
+
+  .cs-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+    grid-column: auto !important;
+    justify-self: stretch !important;
+  }
+
+  a.cs-btn,
+  .cs-btn {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 44px !important;
+    padding: 14px 18px !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.10em !important;
+    text-transform: uppercase !important;
+    box-sizing: border-box !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+  }
+
+  .cs-btn-left {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .cs-btn-left i,
+  .cs-btn-right {
+    font-size: 14px !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
+  }
+
+  .cs-btn * {
+    pointer-events: none !important;
+  }
+
+  .cs-label {
+    font-size: 7px !important;
+    letter-spacing: 0.28em !important;
+    margin-bottom: 7px !important;
+    color: #C9A978 !important;
+  }
+
+  .cs-title {
     font-size: 24px !important;
     line-height: 1.2 !important;
     color: #1F4037 !important;

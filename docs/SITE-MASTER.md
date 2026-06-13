@@ -165,14 +165,25 @@
 
 → 로고의 X는 브랜드 이니셜의 한 글자이고, 슬로건/푸터의 x·×는 문장 속 연결 기호로 **의도적으로 다르게** 씁니다.
 
-### 모바일 FOOTER — 표시 문구 (3줄 + ©)
+### 모바일 FOOTER — 표시 문구 (3줄 + 언어 + ©)
 
-데스크톱 회사정보·언어 **숨김**. 아래만 표시:
+**전 페이지 공통** (`css/mobile.css` + `css/common.css`). 페이지별 인라인 footer CSS로 덮어쓰지 않음.
+
+| 표시 | 숨김 (모바일) |
+|------|----------------|
+| `W X M` / `WELLNESS × MECHANISM` / `We Design Wellness x Mechanism` / **`KR/EN/JP/CN`** / `© WXM Inc.` | 회사정보만 |
+
+- 언어는 **한 줄** `KR/EN/JP/CN` (슬래시 구분, KR active)
+- `qube24.html` 등 랜딩도 **index와 동일** compact footer
+- 모든 HTML에 `<link rel="stylesheet" href="css/mobile.css">` 필수
+
+모바일 표시:
 
 ```
 1줄  W X M
 2줄  WELLNESS × MECHANISM
 3줄  We Design Wellness x Mechanism
+4줄  KR/EN/JP/CN
      © WXM Inc. All rights reserved.
 ```
 
@@ -192,6 +203,27 @@
 | 그룹 | 페이지 | 배경 | 높이 | 슬로건 |
 |------|--------|------|------|--------|
 | **메인** | `index.html` | `images/bg-1.png` + 얕은 오버레이 | HEADER+HERO ≈ **100vh** (스크롤 후 MID·밴드·FOOTER) | `We Design` / `Wellness x` / `Mechanism` (3줄 타이포) |
+
+### index HERO 슬로건 — 모바일 3줄 고정 (브라우저 구도 유지)
+
+데스크톱·모바일 **동일 3줄**. 모바일에서 줄이 합쳐지면 안 됨.
+
+| 줄 | HTML | 금지 예 |
+|----|------|---------|
+| 1 | `We Design` (`.hero-line-design`) | `We Design Wellness x` 한 줄에 합침 |
+| 2 | `Wellness x` (`.hero-line-wellness`) | — |
+| 3 | `Mechanism` (`.hero-line-mechanism`, italic) | `Mechanism`만 둘째 줄에 단독 |
+
+**모바일 CSS 필수**
+
+```css
+.hero-title { display:flex; flex-direction:column; align-items:flex-start; width:max-content; }
+.hero-line   { display:block; white-space:nowrap; width:max-content; }
+.hero-line-wellness { display:inline-flex; align-items:baseline; }
+```
+
+- `.hero-title`에 `width:100%` + `white-space:normal`만 주면 3줄이 깨짐 → **사용 금지**
+- 크기만 `clamp`로 줄이고 **줄바꿈 구조는 유지**
 | **랜딩형** | `qube24.html`, `seminar-event.html` | **그라데이션** (bg-1 없음) | **서로 동일** `min-height: 520px` (모바일 `auto`) | qube24: Better Moment / Better You · seminar: **index와 동일 3줄 슬로건** |
 | **예외 [C]** | `coming-soon.html`, `login.html` | coming-soon: 그라데이션 / login: cream 본문 | **HEADER+본문+FOOTER = 100vh, 스크롤 없음** (`body.page-type-c`) | coming-soon: Coming Soon 타이틀 |
 

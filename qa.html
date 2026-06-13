@@ -20,11 +20,8 @@
       .nav-link { font-size: 6px !important; letter-spacing: 0.14em !important; white-space: nowrap !important; }
       .header-right, .nav-pill { display: none !important; }
       .footer-top { display: grid !important; grid-template-columns: 1fr !important; gap: 6px !important; padding: 10px 24px 8px !important; }
-      .footer-top > div, .footer-top > div:first-child, .footer-top > div:nth-child(2), .footer-top > div:nth-child(3) { display: block !important; }
-      .ft-logo { font-size: 8px !important; margin-bottom: 5px !important; }
-      .ft-sub { font-size: 6px !important; margin-bottom: 3px !important; }
-      .ft-tagline { font-size: 7px !important; }
-      .ft-company-name, .ft-company-info, .ft-langs { display: none !important; }
+      .footer-top > div:nth-child(2) { display: none !important; }
+      .ft-company-name, .ft-company-info { display: none !important; }
       .footer-bottom { padding: 7px 24px 9px !important; }
       .ft-copy { font-size: 7px !important; }
       .page-header { padding: 32px 24px 28px !important; }
@@ -39,14 +36,14 @@
     }
 
   </style>
-  <link rel="stylesheet" href="css/mobile.css?v=7">
+  <link rel="stylesheet" href="css/mobile.css?v=9">
   <link rel="stylesheet" href="css/mobile-critical.css?v=7">
   <style id="wxm-mobile-guaranteed">
     @media (max-width: 980px), (hover: none) and (pointer: coarse) {
       .header-right, .nav-pill { display: none !important; }
       .logo, .brand { white-space: nowrap !important; flex-shrink: 0 !important; }
       .footer-top { grid-template-columns: 1fr !important; }
-      .footer-top > div:nth-child(2), .footer-top > div:nth-child(3) { display: none !important; }
+      .footer-top > div:nth-child(2) { display: none !important; }
     }
   </style>
 </head>

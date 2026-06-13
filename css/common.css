@@ -620,8 +620,7 @@ a.ft-lang:hover { color: rgba(244, 240, 232, 0.7); }
 
 /* ── Mobile footer: brand 3 lines + © only ── */
 @media (max-width: 980px), (hover: none) and (pointer: coarse) {
-  .footer-top > div:nth-child(2),
-  .footer-top > div:nth-child(3) {
+  .footer-top > div:nth-child(2) {
     display: none !important;
   }
 }
